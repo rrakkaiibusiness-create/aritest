@@ -1,12 +1,12 @@
-/* Базові налаштування та змінні */
+/* Базові налаштування та кольори з референсу */
 :root {
-    --bg-color: #000000;
-    --text-primary: #ededed;
-    --text-secondary: #a1a1aa;
-    --glass-bg: rgba(255, 255, 255, 0.03);
-    --glass-border: rgba(255, 255, 255, 0.08);
-    --accent-color: #ffffff;
-    --accent-glow: rgba(120, 119, 198, 0.3);
+    --primary-blue: #0052cc; /* Основний синій фон */
+    --gradient-blue: linear-gradient(135deg, #0022aa 0%, #0066ff 100%);
+    --accent-red: #ff3333;
+    --text-dark: #1a1a1a;
+    --text-light: #ffffff;
+    --text-gray: #666666;
+    --bg-light: #f4f8ff; /* Дуже світлий блакитний для фону */
     --font-main: 'Inter', sans-serif;
 }
 
@@ -17,277 +17,368 @@
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-primary);
     font-family: var(--font-main);
-    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
     overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
 }
 
-/* Декоративний градієнт на фоні (стиль Linear/Vercel) */
-.bg-glow {
-    position: absolute;
-    top: -10%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80vw;
-    height: 50vh;
-    background: radial-gradient(circle, var(--accent-glow) 0%, rgba(0,0,0,0) 70%);
-    z-index: -1;
-    pointer-events: none;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
-/* Glassmorphism утиліти */
-.glass {
-    background: var(--glass-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--glass-border);
+.text-center { text-align: center; }
+.mt-2 { margin-top: 2rem; }
+.mt-3 { margin-top: 4rem; }
+
+/* Кнопки */
+.btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px; /* Округлі кнопки як на скринах */
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-size: 1rem;
 }
 
-.glass-card {
-    background: var(--glass-bg);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid var(--glass-border);
-    border-radius: 16px;
-    padding: 2rem;
-    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.glass-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+.btn-red {
+    background-color: var(--accent-red);
+    color: white;
+}
+
+.btn-blue {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+.btn-outline-blue {
+    background-color: transparent;
+    border: 2px solid var(--primary-blue);
+    color: var(--primary-blue);
+}
+
+.btn-outline-white {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-large {
+    padding: 1rem 3rem;
+    font-size: 1.1rem;
 }
 
 /* Навігація */
 .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
+    background-color: white;
+    position: sticky;
+    top: 0;
     z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-.navbar .logo {
-    font-weight: 700;
-    font-size: 1.2rem;
-    letter-spacing: -0.05em;
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--primary-blue);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.badge {
+    font-size: 0.6rem;
+    background: var(--primary-blue);
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
 }
 
 .navbar nav a {
-    color: var(--text-secondary);
     text-decoration: none;
+    color: var(--text-dark);
     margin: 0 1rem;
-    font-size: 0.9rem;
-    transition: color 0.2s ease;
-}
-
-.navbar nav a:hover {
-    color: var(--text-primary);
-}
-
-/* Кнопки */
-.btn {
-    padding: 0.6rem 1.2rem;
-    border-radius: 8px;
-    font-family: inherit;
     font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    border: none;
-}
-
-.btn-primary {
-    background-color: var(--accent-color);
-    color: var(--bg-color);
-}
-
-.btn-primary:hover {
-    background-color: #e0e0e0;
-    transform: scale(1.02);
-}
-
-.btn-secondary {
-    background-color: transparent;
-    color: var(--text-primary);
-    border: 1px solid var(--glass-border);
-}
-
-.btn-secondary:hover {
-    background-color: var(--glass-bg);
-}
-
-.btn-large {
-    padding: 0.8rem 1.6rem;
-    font-size: 1rem;
-}
-
-/* Hero Секція */
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: 0 5%;
-    position: relative;
-    padding-top: 80px;
-}
-
-.hero-content {
-    flex: 1;
-    max-width: 600px;
-    z-index: 2;
-}
-
-.gradient-text {
-    font-size: 4rem;
-    line-height: 1.1;
-    font-weight: 700;
-    letter-spacing: -0.04em;
-    margin-bottom: 1.5rem;
-    background: linear-gradient(180deg, #FFFFFF 0%, #a1a1aa 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.subtitle {
-    font-size: 1.1rem;
-    color: var(--text-secondary);
-    margin-bottom: 2rem;
-}
-
-.hero-actions {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-.price-tag {
     font-size: 0.9rem;
-    color: var(--text-secondary);
 }
 
-/* 3D Контейнер */
-.hero-3d {
-    flex: 1;
-    height: 600px;
+.navbar nav a:hover { color: var(--primary-blue); }
+
+/* Секції загальне */
+.section-blue {
+    background: var(--gradient-blue);
+    color: white;
+    padding: 6rem 5%;
     position: relative;
-    z-index: 1;
 }
 
-/* Секції */
-section {
+.section-white {
+    background: var(--bg-light);
     padding: 6rem 5%;
 }
 
-h2 {
+.blue-title {
+    color: var(--primary-blue);
     font-size: 2.5rem;
-    margin-bottom: 3rem;
-    text-align: center;
-    font-weight: 600;
-    letter-spacing: -0.03em;
-}
-
-/* Trusted By */
-.trusted-by {
-    text-align: center;
-    padding: 4rem 5%;
-    border-top: 1px solid var(--glass-border);
-    border-bottom: 1px solid var(--glass-border);
-}
-
-.trusted-by p {
-    color: var(--text-secondary);
-    font-size: 0.9rem;
     margin-bottom: 2rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
 }
 
-.brands {
+/* Hero Section */
+.hero-container {
     display: flex;
-    justify-content: center;
-    gap: 4rem;
-    flex-wrap: wrap;
-    color: var(--text-secondary);
-    font-weight: 600;
-    font-size: 1.2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+    min-height: 70vh;
 }
 
-/* Грід для карток */
-.grid {
+.hero-text {
+    flex: 1;
+    padding-right: 2rem;
+}
+
+.subtitle {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.main-title {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    font-weight: 800;
+    margin-bottom: 2rem;
+}
+
+.hero-features {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.pricing-block h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.billing-info {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 2rem;
+}
+
+/* Floating Cards Animation (Імітація 3D простору) */
+.hero-visual {
+    flex: 1;
+    position: relative;
+    height: 500px;
+}
+
+.floating-card {
+    background: white;
+    color: var(--text-dark);
+    border-radius: 12px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    position: absolute;
+    animation: float 6s ease-in-out infinite;
+    width: 250px;
+}
+
+.card-ps { top: 10%; left: 10%; animation-delay: 0s; z-index: 3;}
+.card-ae { top: 40%; left: 40%; animation-delay: 2s; z-index: 2;}
+.card-bl { top: 70%; left: 15%; animation-delay: 4s; z-index: 1;}
+
+.card-icon {
+    width: 40px; height: 40px;
+    border-radius: 8px;
+    display: flex; justify-content: center; align-items: center;
+    font-weight: bold; color: white;
+}
+.ps { background: #001e36; color: #31a8ff; border: 2px solid #31a8ff; }
+.ae { background: #00005b; color: #9999ff; border: 2px solid #9999ff; }
+.ai { background: #330000; color: #ff9a00; border: 2px solid #ff9a00; }
+.bl { background: #ea7600; }
+.ac { background: #ff0000; }
+.dv { background: #222222; }
+
+.card-info h4 { font-size: 0.8rem; margin-bottom: 0.5rem; }
+.btn-launch-small {
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px; border: 1px solid var(--primary-blue);
+    background: white; color: var(--primary-blue);
+    font-size: 0.7rem; cursor: pointer;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Two Columns Section (Power Up) */
+.two-columns {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.list-item {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.list-icon {
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+}
+
+.list-item h3 {
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+}
+
+.list-item p {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+}
+
+/* Mockup Placeholder */
+.mockup-devices {
+    position: relative;
+    height: 400px;
+    width: 100%;
+}
+.mockup {
+    background: white;
+    border: 8px solid #e0e0e0;
+    border-radius: 10px;
+    position: absolute;
+    display: flex; justify-content: center; align-items: center;
+    color: var(--text-gray); box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.screen-main { width: 80%; height: 80%; top: 0; left: 10%; z-index: 1;}
+.screen-laptop { width: 60%; height: 50%; bottom: 0; left: 0; z-index: 2;}
+.screen-tablet { width: 30%; height: 60%; bottom: 10%; right: 0; z-index: 3;}
+
+/* Programs Grid Section */
+.filter-tabs {
+    display: flex; justify-content: center; gap: 1rem;
+    margin-bottom: 3rem; flex-wrap: wrap;
+}
+.tab {
+    padding: 0.6rem 1.5rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.3);
+    background: transparent; color: white;
+    cursor: pointer; transition: 0.3s;
+}
+.tab.active, .tab:hover {
+    background: white; color: var(--primary-blue);
+}
+
+.apps-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
 }
 
-.programs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
+.app-card {
+    background: white; color: var(--text-dark);
+    padding: 1.5rem; border-radius: 16px;
+    display: flex; align-items: center; justify-content: space-between;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.program-card {
-    text-align: center;
-    font-weight: 500;
-    padding: 1.5rem;
+.app-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
 
-.glass-card h3 {
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
+.app-icon {
+    width: 50px; height: 50px; border-radius: 10px;
+    display: flex; justify-content: center; align-items: center;
+    font-size: 1.2rem; font-weight: bold; color: white;
 }
 
-.glass-card p {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
+.app-details { text-align: left; flex: 1; margin: 0 1rem; }
+.app-details h4 { font-size: 1rem; margin-bottom: 0.2rem; }
+.app-details p { font-size: 0.8rem; color: var(--text-gray); }
+
+/* Bottom CTA */
+.benefits-row {
+    display: flex; justify-content: center; gap: 2rem;
+    margin-bottom: 3rem; flex-wrap: wrap;
+}
+.benefit-card {
+    background: white;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    flex: 1; min-width: 250px;
+    color: var(--primary-blue); font-weight: 600;
+}
+
+.trusted-box {
+    background: var(--primary-blue);
+    color: white; border-radius: 20px;
+    padding: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;
+}
+
+.brands-logos {
+    display: flex; justify-content: space-around;
+    margin-top: 1.5rem; font-weight: bold; font-size: 1.2rem;
+    flex-wrap: wrap; gap: 1rem;
 }
 
 /* Footer */
 .footer {
-    text-align: center;
-    padding: 3rem 5%;
-    border-top: 1px solid var(--glass-border);
-    color: var(--text-secondary);
-    font-size: 0.9rem;
+    background: #ebebeb; padding: 3rem 5%; font-size: 0.9rem;
 }
+.flex-between { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem;}
+.footer-logo { font-size: 1.2rem; font-weight: bold; color: var(--text-dark); margin-bottom: 1rem;}
+.footer-links a { color: var(--text-gray); text-decoration: none; margin: 0 0.5rem; }
 
-/* Анімації появи (Reveal) */
+/* Анімації появи */
 .reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s cubic-bezier(0.5, 0, 0, 1), transform 0.8s cubic-bezier(0.5, 0, 0, 1);
+    opacity: 0; transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
+.reveal.active { opacity: 1; transform: translateY(0); }
+.delay-1 { transition-delay: 0.2s; }
 
 /* Адаптивність */
-@media (max-width: 768px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-        padding-top: 120px;
-    }
-    .gradient-text {
-        font-size: 2.5rem;
-    }
-    .hero-actions {
-        justify-content: center;
-    }
-    .hero-3d {
-        width: 100%;
-        height: 400px;
-        margin-top: 2rem;
-    }
-    .navbar nav {
-        display: none; /* Для MVP ховаємо меню на мобільних */
-    }
+@media (max-width: 992px) {
+    .hero-container, .two-columns { flex-direction: column; text-align: center; }
+    .hero-text { padding-right: 0; margin-bottom: 3rem; }
+    .hero-features { justify-content: center; }
+    .hero-visual { width: 100%; height: 400px; }
+    .list-item { text-align: left; }
+    .navbar nav { display: none; } /* Приховати меню на мобільних */
+    .main-title { font-size: 2.5rem; }
 }
