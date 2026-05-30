@@ -1,27 +1,33 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Налаштування для Intersection Observer
+    // Анімація появи елементів (Reveal on Scroll)
     const observerOptions = {
-        root: null, // Відстежуємо відносно viewport
+        root: null,
         rootMargin: '0px',
-        threshold: 0.1 // Спрацьовує, коли 10% елемента видно на екрані
+        threshold: 0.15 // Спрацьовує, коли 15% елемента видно
     };
 
-    // Callback функція, яка додає клас 'active', коли елемент у полі зору
-    const observerCallback = (entries, observer) => {
+    const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Додаємо клас для запуску CSS-анімації
                 entry.target.classList.add('active');
-                // Припиняємо спостереження після появи, щоб анімація не повторювалась
-                observer.unobserve(entry.target);
+                observer.unobserve(entry.target); // Анімуємо лише один раз
             }
         });
-    };
+    }, observerOptions);
 
-    // Ініціалізація Observer
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
-
-    // Знаходимо всі елементи з класом .reveal та додаємо їх до Observer
     const revealElements = document.querySelectorAll('.reveal');
     revealElements.forEach(el => observer.observe(el));
+
+    // Логіка для табів програм (візуальна взаємодія)
+    const tabs = document.querySelectorAll('.tab');
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // Видаляємо клас active у всіх
+            tabs.forEach(t => t.classList.remove('active'));
+            // Додаємо натиснутому
+            tab.classList.add('active');
+            
+            // Тут в майбутньому можна додати логіку фільтрації карток
+        });
+    });
 });
