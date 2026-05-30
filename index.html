@@ -1,91 +1,223 @@
-    <!DOCTYPE html>
-<html lang="uk">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aristeem | Платформа нового покоління</title>
+    <title>Aristeem | Cloud Application Platform</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.51/build/spline-viewer.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="bg-glow"></div>
-
-    <header class="navbar glass">
-        <div class="logo">Aristeem</div>
+    <header class="navbar">
+        <div class="logo">ARISTEEM <span class="badge">BETA</span></div>
         <nav>
-            <a href="#features">Можливості</a>
-            <a href="#programs">Програми</a>
-            <a href="#pricing">Ціни</a>
+            <a href="#home">Home</a>
+            <a href="#solution">Solution <span>v</span></a>
+            <a href="#programs">Programs</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#download">Download</a>
+            <a href="#plans">Plans</a>
+            <a href="#faq">FAQ <span>v</span></a>
         </nav>
-        <button class="btn btn-primary">Почати роботу</button>
+        <button class="btn btn-outline-blue">Login</button>
     </header>
 
-    <section class="hero">
-        <div class="hero-content reveal">
-            <h1 class="gradient-text">Потужність хмарних обчислень. <br>Без компромісів.</h1>
-            <p class="subtitle">Рендеринг, дизайн та розробка в браузері. Ваш персональний суперкомп'ютер завжди під рукою.</p>
-            <div class="hero-actions">
-                <button class="btn btn-primary btn-large">Спробувати безкоштовно</button>
-                <button class="btn btn-secondary btn-large">Дізнатись більше</button>
+    <section id="home" class="hero section-blue wave-bottom">
+        <div class="hero-container">
+            <div class="hero-text reveal">
+                <div class="subtitle">CLOUD APPLICATION PLATFORM</div>
+                <h1 class="main-title">RUN YOUR SOFTWARE.<br>ANYTIME. ANYWHERE.</h1>
+                
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <span class="icon">⚡</span> Run PC Programs On Any Device
+                    </div>
+                    <div class="feature-item">
+                        <span class="icon">⚡</span> Launch In Browser
+                    </div>
+                </div>
+
+                <div class="pricing-block">
+                    <h3>SETTINGS HIGH — PRICES LOW</h3>
+                    <div class="price">from € 14.92</div>
+                    <p class="billing-info">Per Month With Annual Subscription</p>
+                </div>
+
+                <button class="btn btn-red btn-large">Open App</button>
             </div>
-            <div class="price-tag">Від $15 / місяць</div>
-        </div>
-        
-        <div class="hero-3d">
-            <spline-viewer url="https://prod.spline.design/6Wq1Q7YGyM-iab9I/scene.splinecode"></spline-viewer>
+            
+            <div class="hero-visual reveal delay-1">
+                <div class="floating-card card-ps">
+                    <div class="card-icon ps">Ps</div>
+                    <div class="card-info">
+                        <h4>Adobe Photoshop 2024</h4>
+                        <button class="btn-launch-small">Launch</button>
+                    </div>
+                </div>
+                <div class="floating-card card-ae">
+                    <div class="card-icon ae">Ae</div>
+                    <div class="card-info">
+                        <h4>Adobe After Effects 2024</h4>
+                        <button class="btn-launch-small">Launch</button>
+                    </div>
+                </div>
+                <div class="floating-card card-bl">
+                    <div class="card-icon bl">Bl</div>
+                    <div class="card-info">
+                        <h4>Blender</h4>
+                        <button class="btn-launch-small">Launch</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="trusted-by reveal">
-        <p>Нам довіряють інноватори</p>
-        <div class="brands">
-            <span>AMD</span>
-            <span>ASUS</span>
-            <span>Digital Realty</span>
-            <span>TierPoint</span>
+    <section id="solution" class="power-up section-white">
+        <div class="container two-columns">
+            <div class="visual-placeholder reveal">
+                <div class="mockup-devices">
+                    <div class="mockup screen-main">App Interface</div>
+                    <div class="mockup screen-laptop">Workspace</div>
+                    <div class="mockup screen-tablet">Tablet UI</div>
+                </div>
+            </div>
+            <div class="text-content reveal delay-1">
+                <h2 class="blue-title">Power Up Your Devices</h2>
+                
+                <div class="list-item">
+                    <div class="list-icon">⚡</div>
+                    <div>
+                        <h3>Your Hardware, Our Power</h3>
+                        <p>Applications run on our high-performance cloud-based virtual computer systems, providing professional cloud computing services right from your device.</p>
+                    </div>
+                </div>
+
+                <div class="list-item">
+                    <div class="list-icon">✕</div>
+                    <div>
+                        <h3>No Updates</h3>
+                        <p>No heavy software updates. Just log in and get to work. We take care of the rest.</p>
+                    </div>
+                </div>
+
+                <div class="list-item">
+                    <div class="list-icon">⚙️</div>
+                    <div>
+                        <h3>No Session Time Limits</h3>
+                        <p>Unlimited session duration. Instant access, depending on available server capacity.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="features" class="features reveal">
-        <h2>Можливості платформи</h2>
-        <div class="grid">
-            <div class="glass-card">
-                <h3>No Updates</h3>
-                <p>Забудьте про оновлення драйверів та софту. Ми робимо це за вас на рівні сервера.</p>
+    <section id="programs" class="programs-section section-blue wave-top wave-bottom">
+        <div class="container text-center reveal">
+            <h2>Find Your Programs In Seconds</h2>
+            
+            <div class="filter-tabs">
+                <button class="tab active">All programs</button>
+                <button class="tab">Video Engineers</button>
+                <button class="tab">Graphic Designers</button>
+                <button class="tab">3D designers</button>
+                <button class="tab">Architecture</button>
             </div>
-            <div class="glass-card">
-                <h3>Unlimited Sessions</h3>
-                <p>Працюйте стільки, скільки потрібно. Жодних обмежень за часом сесії.</p>
+
+            <div class="apps-grid">
+                <div class="app-card">
+                    <div class="app-icon ps">Ps</div>
+                    <div class="app-details">
+                        <h4>Adobe Photoshop</h4>
+                        <p>Photo editing software</p>
+                    </div>
+                    <button class="btn btn-blue">Launch</button>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon ae">Ae</div>
+                    <div class="app-details">
+                        <h4>Adobe After Effects</h4>
+                        <p>Motion graphic software</p>
+                    </div>
+                    <button class="btn btn-blue">Launch</button>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon ai">Ai</div>
+                    <div class="app-details">
+                        <h4>Adobe Illustrator</h4>
+                        <p>Vector graphic software</p>
+                    </div>
+                    <button class="btn btn-blue">Launch</button>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon bl">Bl</div>
+                    <div class="app-details">
+                        <h4>Blender</h4>
+                        <p>3D creation suite</p>
+                    </div>
+                    <button class="btn btn-blue">Launch</button>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon ac">Ac</div>
+                    <div class="app-details">
+                        <h4>AutoCAD</h4>
+                        <p>CAD design software</p>
+                    </div>
+                    <button class="btn btn-blue">Launch</button>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon dv">Dv</div>
+                    <div class="app-details">
+                        <h4>DaVinci Resolve</h4>
+                        <p>Video & Motion</p>
+                    </div>
+                    <button class="btn btn-blue">Launch</button>
+                </div>
             </div>
-            <div class="glass-card">
-                <h3>Cloud Storage</h3>
-                <p>Усі ваші проєкти автоматично синхронізуються у високошвидкісному хмарному сховищі.</p>
+            
+            <button class="btn btn-outline-white mt-2">+ 275 apps</button>
+        </div>
+    </section>
+
+    <section class="bottom-cta section-white text-center">
+        <div class="container reveal">
+            <h2 class="blue-title">Start Working Without Limits – From Any Device</h2>
+            
+            <div class="benefits-row">
+                <div class="benefit-card">⚡ Get workstation-level performance</div>
+                <div class="benefit-card">💻 Run applications on any operating system</div>
+                <div class="benefit-card">🌐 Everything works in the browser. No setup.</div>
             </div>
-            <div class="glass-card">
-                <h3>Multitasking</h3>
-                <p>Запускайте важкі процеси у фоні та продовжуйте працювати без втрати продуктивності.</p>
+
+            <button class="btn btn-red btn-large">Start Working</button>
+
+            <div class="trusted-box mt-3">
+                <h3>Trusted by leading brands</h3>
+                <div class="brands-logos">
+                    <span>DIGITAL REALTY</span>
+                    <span>AMD</span>
+                    <span>ASUS</span>
+                    <span>tierpoint</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="programs" class="programs reveal">
-        <h2>Підтримувані програми</h2>
-        <div class="programs-grid">
-            <div class="glass-card program-card">Photoshop</div>
-            <div class="glass-card program-card">After Effects</div>
-            <div class="glass-card program-card">Illustrator</div>
-            <div class="glass-card program-card">Blender</div>
-            <div class="glass-card program-card">AutoCAD</div>
-            <div class="glass-card program-card">DaVinci Resolve</div>
-            <div class="glass-card program-card">Maya</div>
-            <div class="glass-card program-card">InDesign</div>
+    <footer class="footer">
+        <div class="container flex-between">
+            <div class="footer-left">
+                <div class="footer-logo">ARISTEEM</div>
+                <p>© Copyright, 2026 Wright Cloud Inc.</p>
+                <div class="footer-links">
+                    <a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <p>Support <span class="icon-circle">✉️</span></p>
+                <p>Follow Us 
+                    <span class="social-icons">f in X</span>
+                </p>
+            </div>
         </div>
-    </section>
-
-    <footer class="footer reveal">
-        <div class="logo">Aristeem</div>
-        <p>© 2026 Aristeem. Всі права захищені.</p>
     </footer>
 
     <script src="script.js"></script>
