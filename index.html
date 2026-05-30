@@ -1,0 +1,93 @@
+    <!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aristeem | Платформа нового покоління</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.51/build/spline-viewer.js"></script>
+</head>
+<body>
+    <div class="bg-glow"></div>
+
+    <header class="navbar glass">
+        <div class="logo">Aristeem</div>
+        <nav>
+            <a href="#features">Можливості</a>
+            <a href="#programs">Програми</a>
+            <a href="#pricing">Ціни</a>
+        </nav>
+        <button class="btn btn-primary">Почати роботу</button>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content reveal">
+            <h1 class="gradient-text">Потужність хмарних обчислень. <br>Без компромісів.</h1>
+            <p class="subtitle">Рендеринг, дизайн та розробка в браузері. Ваш персональний суперкомп'ютер завжди під рукою.</p>
+            <div class="hero-actions">
+                <button class="btn btn-primary btn-large">Спробувати безкоштовно</button>
+                <button class="btn btn-secondary btn-large">Дізнатись більше</button>
+            </div>
+            <div class="price-tag">Від $15 / місяць</div>
+        </div>
+        
+        <div class="hero-3d">
+            <spline-viewer url="https://prod.spline.design/6Wq1Q7YGyM-iab9I/scene.splinecode"></spline-viewer>
+        </div>
+    </section>
+
+    <section class="trusted-by reveal">
+        <p>Нам довіряють інноватори</p>
+        <div class="brands">
+            <span>AMD</span>
+            <span>ASUS</span>
+            <span>Digital Realty</span>
+            <span>TierPoint</span>
+        </div>
+    </section>
+
+    <section id="features" class="features reveal">
+        <h2>Можливості платформи</h2>
+        <div class="grid">
+            <div class="glass-card">
+                <h3>No Updates</h3>
+                <p>Забудьте про оновлення драйверів та софту. Ми робимо це за вас на рівні сервера.</p>
+            </div>
+            <div class="glass-card">
+                <h3>Unlimited Sessions</h3>
+                <p>Працюйте стільки, скільки потрібно. Жодних обмежень за часом сесії.</p>
+            </div>
+            <div class="glass-card">
+                <h3>Cloud Storage</h3>
+                <p>Усі ваші проєкти автоматично синхронізуються у високошвидкісному хмарному сховищі.</p>
+            </div>
+            <div class="glass-card">
+                <h3>Multitasking</h3>
+                <p>Запускайте важкі процеси у фоні та продовжуйте працювати без втрати продуктивності.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="programs" class="programs reveal">
+        <h2>Підтримувані програми</h2>
+        <div class="programs-grid">
+            <div class="glass-card program-card">Photoshop</div>
+            <div class="glass-card program-card">After Effects</div>
+            <div class="glass-card program-card">Illustrator</div>
+            <div class="glass-card program-card">Blender</div>
+            <div class="glass-card program-card">AutoCAD</div>
+            <div class="glass-card program-card">DaVinci Resolve</div>
+            <div class="glass-card program-card">Maya</div>
+            <div class="glass-card program-card">InDesign</div>
+        </div>
+    </section>
+
+    <footer class="footer reveal">
+        <div class="logo">Aristeem</div>
+        <p>© 2026 Aristeem. Всі права захищені.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
