@@ -238,7 +238,7 @@ body {
 .hero-cta { padding: 4rem 2rem; }
 .benefits-row { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
 .trusted-brands p { color: var(--text-muted); font-size: 2rem; letter-spacing: 1px; margin-bottom: 1rem; }
-.brands { display: flex; justify-content: center; gap: 3rem; font-weight: 700; font-size: 1.2rem; opacity: 0.6; flex-wrap: wrap; }
+.brands { display: flex; justify-content: center; gap: 3rem; font-weight: 700; font-size: 2rem; opacity: 0.6; flex-wrap: wrap; }
 
 .glass-footer {
     background: rgba(7, 11, 20, 0.8);
