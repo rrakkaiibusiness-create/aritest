@@ -223,6 +223,17 @@ body {
 .app-card h4 { font-size: 1.1rem; }
 .app-card p { font-size: 0.85rem; color: var(--text-muted); flex-grow: 1; }
 
+.app-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
 /* --- CTA & FOOTER --- */
 .hero-cta { padding: 4rem 2rem; }
 .benefits-row { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
@@ -251,33 +262,60 @@ body {
     .glass-nav nav { display: none; }
     .main-title { font-size: 2.5rem; }
 }
-/* ---------------- MOBILE FIXES ---------------- */
+/* =======================================
+   MOBILE FIX PACK
+   ======================================= */
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
 
     .container {
         padding: 0 1rem;
     }
 
-    .main-title {
-        font-size: 2rem;
-        line-height: 1.2;
+    .glass-nav {
+        padding: 1rem;
     }
 
-    .section-title {
-        font-size: 1.8rem;
+    .glass-nav nav {
+        display: none;
     }
 
     .hero {
+        flex-direction: column;
+        text-align: center;
         min-height: auto;
         padding-top: 2rem;
     }
 
+    .hero-text {
+        padding-right: 0;
+        margin-bottom: 3rem;
+    }
+
+    .main-title {
+        font-size: 2.5rem;
+        line-height: 1.15;
+    }
+
+    .hero-features {
+        justify-content: center;
+    }
+
+    .pricing-block {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
     .hero-visual {
+        width: 100%;
         height: auto;
+        min-height: auto;
+
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: 20px;
+
+        align-items: center;
     }
 
     .float-1,
@@ -285,33 +323,51 @@ body {
     .float-3 {
         position: static;
         width: 100%;
+        max-width: 500px;
         animation: none;
+        transform: none;
     }
 
-    .glass-card {
+    .two-columns {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .visual-placeholder {
         width: 100%;
+        min-height: auto;
+        padding: 2rem;
+        text-align: center;
     }
 
-    .pricing-block {
-        max-width: 100%;
+    .mockup-text {
+        position: static;
+        display: block;
+        margin-bottom: 2rem;
+        font-size: 1rem;
     }
 
-    .price {
+    .section-title {
         font-size: 2rem;
+        text-align: center;
     }
 
     .row-item {
         flex-direction: column;
         text-align: center;
+        gap: 1rem;
     }
 
-    .glass-panel {
-        padding: 1.5rem;
+    .apps-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .app-card {
+        width: 100%;
     }
 
     .brands {
         gap: 1rem;
-        font-size: 1rem;
     }
 
     .flex-between {
@@ -319,18 +375,62 @@ body {
         text-align: center;
     }
 
-    .footer-links {
-        margin-top: 1rem;
-    }
-
     .social-icons {
         justify-content: center;
     }
 }
 
-/* Дуже маленькі телефони */
+@media (max-width: 768px) {
+
+    .main-title {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .glass-panel {
+        padding: 1.5rem;
+    }
+
+    .price {
+        font-size: 2rem;
+    }
+
+    .hero-features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .glass-badge {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .filter-tabs {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-tabs .neo-btn {
+        width: 100%;
+    }
+
+    .brands {
+        font-size: 1rem;
+    }
+}
 
 @media (max-width: 480px) {
+
+    .logo {
+        font-size: 1.1rem;
+    }
+
+    .badge {
+        font-size: 0.55rem;
+    }
 
     .main-title {
         font-size: 1.6rem;
@@ -346,16 +446,23 @@ body {
         padding: 1rem;
     }
 
-    .hero-features {
-        flex-direction: column;
-        align-items: center;
+    .glass-card {
+        padding: 1rem;
     }
 
-    .filter-tabs {
-        flex-direction: column;
+    .card-info h4 {
+        font-size: 0.9rem;
     }
 
-    .filter-tabs .neo-btn {
-        width: 100%;
+    .price {
+        font-size: 1.8rem;
+    }
+
+    .hero-cta {
+        padding: 2rem 1rem;
+    }
+
+    .benefits-row {
+        flex-direction: column;
     }
 }
